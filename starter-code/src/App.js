@@ -31,7 +31,7 @@ function App() {
 
   function filterByCampus(user) {
     // Keep the user when there is not state.campus ("All") or when the user has the same campus as the state.campus
-    return state.campus === "" || user.campus === state.campus
+    return state.campus === "" || user.campus === state.campus;
   }
 
   let repeatedCampuses = users.map(user => user.campus);
@@ -39,6 +39,24 @@ function App() {
     (campus, i) => repeatedCampuses.indexOf(campus) === i
   );
 
+  function underlineWithSearch(text) {
+    let index1 = text.toUpperCase().indexOf(state.search.toUpperCase());
+
+    if (index1 === -1) return text; // Happen when text doesn't include state.search
+
+    let index2 = index1 + state.search.length;
+    let leftPart = text.substring(0, index1);
+    let middlePart = text.substring(index1, index2);
+    let rightPart = text.substring(index2);
+
+    return (
+      <span>
+        {leftPart}
+        <span className="underline">{middlePart}</span>
+        {rightPart}
+      </span>
+    );
+  }
 
   return (
     <div className="App">
@@ -90,11 +108,16 @@ function App() {
         </thead>
         <tbody>
           {users
-            .filter(user => filterBySearch(user) && filterByRole(user) && filterByCampus(user))
+            .filter(
+              user =>
+                filterBySearch(user) &&
+                filterByRole(user) &&
+                filterByCampus(user)
+            )
             .map((user, i) => (
               <tr key={i}>
-                <td>{user.firstName}</td>
-                <td>{user.lastName}</td>
+                <td>{underlineWithSearch(user.firstName)}</td>
+                <td>{underlineWithSearch(user.lastName)}</td>
                 <td>{user.campus}</td>
                 <td>{user.role}</td>
                 <td>
