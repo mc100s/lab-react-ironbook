@@ -40,7 +40,7 @@
   { "firstName": "Hendrik", "lastName": "Wermser", "campus": "Berlin", "role": "teacher", "linkedin": "https://www.linkedin.com/in/hendrikwe/" },
   { "firstName": "Hubert", "lastName": "Saint Olive", "campus": "Paris", "role": "student" },
   { "firstName": "Hugo", "lastName": "Lourenço", "campus": "Lisbon", "role": "student" },
-  { "firstName": "Ingo", "lastName": "Grossmann", "campus": "Lisbon", "role": "student" },
+  { "firstName": "Ingo", "lastName": "Großmann", "campus": "Lisbon", "role": "student" },
   { "firstName": "Jad", "lastName": "Challita", "campus": "Paris", "role": "student" },
   { "firstName": "Jamie", "lastName": "Egan", "campus": "Berlin", "role": "student" },
   { "firstName": "Jennifer", "lastName": "Roberts", "campus": "Berlin", "role": "student" },
